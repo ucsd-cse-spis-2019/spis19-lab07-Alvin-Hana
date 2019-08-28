@@ -14,13 +14,19 @@ def train(s):
             dictionary[word]=[words[x+1]]
         else:
             dictionary[word].append(words[x+1])
-    print (dictionary)
+    return dictionary
+#    print (dictionary)
 
-def generate(model, firstWord, numWords)
-    sentence = firstWord
+def generate(model, firstWord, numWords):
+    sentence = ""
+    word = firstWord
     for x in range(numWords):
-        sentence += random.choice(dictionary.get() + " "
-    print (sentence)
+        sentence += word + " "
+#        print(model.get(word))
+        word = random.choice(model[word])
+    print(sentence)
 
 
-train("My milkshake brings all the boys to the yard and they're like, it's better than yours damn right it's better than yours")
+sample = train("Yeah baby I like it like that You gotta believe me when I tell you I said I like it like that")
+generate(sample, "like", 10)
+
